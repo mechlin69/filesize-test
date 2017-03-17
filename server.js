@@ -1,9 +1,13 @@
 //
+var http = require('http');
 var express = require('express');
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
+
+var router = express();
  
 var app = express();
+var server = http.createServer(router);
  
 app.post('/profile', upload.single('avatar'), function (req, res, next) {
   // req.file is the `avatar` file 
@@ -24,4 +28,10 @@ app.post('/cool-profile', cpUpload, function (req, res, next) {
   //  req.files['gallery'] -> Array 
   // 
   // req.body will contain the text fields, if there were any 
-})
+  
+});
+
+server.listen(process.env.PORT || 8080, process.env.IP || "0.0.0.0", function(){
+  var addr = server.address();
+  console.log("file upload listening at", addr.address + ":" + addr.port);
+});
