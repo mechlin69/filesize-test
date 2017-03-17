@@ -3,12 +3,24 @@
   "version": "0.0.1",
   "description": "upload a file and get size",
   "main": "server.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mechlin69/filesize-test.git"
+  },
   "author": "mike echlin <mikeechlin@gmail.com>",
   "dependencies": {
     "async": "~0.2.8",
     "express": "~3.2.4",
     "multer": "^1.3.0",
     "socket.io": "~0.9.14"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mechlin69/filesize-test/issues"
+  },
+  "homepage": "https://github.com/mechlin69/filesize-test#readme"
 }
